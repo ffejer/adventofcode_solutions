@@ -1,4 +1,4 @@
-package com.adventofcode._2015.day3;
+package com.adventofcode.year2015.day3;
 
 import java.io.IOException;
 import java.nio.file.Files;
