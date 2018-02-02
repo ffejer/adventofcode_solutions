@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -17,8 +18,8 @@ public class NaughtyOrNice {
 
     NaughtyOrNice() {
         this.dupeChars = Pattern.compile("(.)\1/g");
-        this.atLeastThreeVowels = Pattern.compile("([aeiou].*){3,}");
-        this.noDisallowedStrings = Pattern.compile("(ab|cd|pq|xy)");
+        this.atLeastThreeVowels = Pattern.compile("([aeiou].*){3,}/g");
+        this.noDisallowedStrings = Pattern.compile("(ab|cd|pq|xy)/g");
     }
 
     public static void main(String[] args) {
@@ -27,13 +28,15 @@ public class NaughtyOrNice {
 
     long calculate(List<String> strings) {
 
-        dupeChars.matcher("dmrtgdkaimrrwmej").matches();
+//        List<String> strings2 = Arrays.asList("ugknbfddgicrmopn", "aaa", "jchzalrnumimnmhp", "haegwjzuvuyypxyu");
+//
+//        dupeChars.matcher("aaa").matches();
 
-
-        long count = strings.stream().filter(s ->
-                /*atLeastThreeVowels.matcher(s).matches() &&*/ dupeChars.matcher(s).matches() /*&& !noDisallowedStrings.matcher(s)*/
-                        /*.matches()*/
-        ).count();
+        long count = strings.stream()
+                .filter(s -> !noDisallowedStrings.matcher(s).matches())
+                .filter(s -> dupeChars.matcher(s).matches())
+                .filter(s -> atLeastThreeVowels.matcher(s).matches())
+                .count();
 
         return count;
     }
