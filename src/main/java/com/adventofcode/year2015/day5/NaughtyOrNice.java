@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
+// doesnt work, see patterns.
 public class NaughtyOrNice {
 
     private final Pattern atLeastThreeVowels;
