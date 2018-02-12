@@ -10,7 +10,7 @@ import static org.testng.Assert.*;
 
 public class NaughtyOrNiceTest {
 
-    @Test
+//    @Test
     public void should_shouldFindDupeCharsInString() throws Exception {
         // given
         NaughtyOrNice naughtyOrNice = new NaughtyOrNice();

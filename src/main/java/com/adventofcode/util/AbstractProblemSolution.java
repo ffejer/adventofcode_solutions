@@ -18,7 +18,6 @@ public abstract class AbstractProblemSolution {
             File file = new File(pathname);
             byte[] data = new byte[(int) file.length()];
             System.out.println(fis.read(data));
-            fis.close();
             text = new String(data, "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
