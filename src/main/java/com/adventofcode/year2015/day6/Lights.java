@@ -3,6 +3,7 @@ package com.adventofcode.year2015.day6;
 import com.adventofcode.util.AbstractProblemSolution;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
@@ -15,18 +16,14 @@ public class Lights extends AbstractProblemSolution {
     static String  pattern     = "^(turn on|turn off|toggle)\\s([0-9]*\\d),([0-9]*\\d)\\sthrough\\s([0-9]*\\d),([0-9]*\\d)";
     static Pattern instruction = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.UNIX_LINES);
 
-    boolean[][] switchPanel;
+    int[][] switchPanel;
 
     public int getSolution() {
 
         int count = 0;
 
         for (int i = 0; i < switchPanel.length; i++) {
-            for (int j = 0; j < switchPanel[i].length; j++) {
-                if (switchPanel[i][j]) {
-                    count++;
-                }
-            }
+            count += Arrays.stream(switchPanel[i]).sum();
         }
 
         return count;
@@ -49,7 +46,7 @@ public class Lights extends AbstractProblemSolution {
     }
 
     Lights() {
-        switchPanel = new boolean[1000][1000];
+        switchPanel = new int[1000][1000];
     }
 
     public static void main(String[] args) {
@@ -67,14 +64,16 @@ public class Lights extends AbstractProblemSolution {
     }
 
     private void applyInstruction(SwitchChange instruction) {
-        for (int tempx = instruction.x1; tempx <= instruction.x2; tempx++)
-            for (int tempy = instruction.y1; tempy <= instruction.y2; tempy++) {
+        for (int tempX = instruction.x1; tempX <= instruction.x2; tempX++)
+            for (int tempY = instruction.y1; tempY <= instruction.y2; tempY++) {
                 if (instruction.change.equals(ON))
-                    switchPanel[tempx][tempy] = true;
+                    switchPanel[tempX][tempY]++;
                 else if (instruction.change.equals(OFF))
-                    switchPanel[tempx][tempy] = false;
+                    switchPanel[tempX][tempY]--;
                 else if (instruction.change.equals(TOGGLE))
-                    switchPanel[tempx][tempy] = !switchPanel[tempx][tempy];
+                    switchPanel[tempX][tempY] += 2;
+
+                if(switchPanel[tempX][tempY] < 0) switchPanel[tempX][tempY] = 0;
             }
     }
 
