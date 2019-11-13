@@ -4,11 +4,14 @@ import com.adventofcode.year2015.day6.Lights;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Stream;
 
 public abstract class AbstractProblemSolution {
 
-    public static String readFile(String pathname) {
+    protected static String readFile(String pathname) {
 
         String text = "";
 
@@ -24,6 +27,15 @@ public abstract class AbstractProblemSolution {
         }
 
         return text;
+    }
+
+    protected static Stream<String> readStreamFromFile(String pathname) {
+        try(Stream<String> stream = Files.lines(Paths.get(pathname))) {
+            return stream;
+        } catch(Exception e) {
+            System.out.println("Something went wrong. " + e.getMessage());
+        }
+        return null;
     }
 
 
