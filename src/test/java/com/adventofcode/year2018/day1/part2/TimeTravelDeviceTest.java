@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class TimeTravelDeviceTest {
 
-
     @DataProvider(name = "exampleInput")
     public static Object[][] exampleInput() {
         return new Object[][]{
