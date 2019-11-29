@@ -22,7 +22,7 @@ public class TimeTravelDevice {
     }
 
     public static void main(String[] args) {
-        try(Stream<String> stream = Files.lines(Paths.get("./src/main/resources/2018/day1/input.txt"))) {
+        try(Stream<String> stream = Files.lines(Paths.get("./src/main/resources/2018/day/1/input.txt"))) {
             List<Integer> input = stream.map(Integer::valueOf).collect(Collectors.toList());
             Integer result = null;
             TimeTravelDevice device = new TimeTravelDevice();
