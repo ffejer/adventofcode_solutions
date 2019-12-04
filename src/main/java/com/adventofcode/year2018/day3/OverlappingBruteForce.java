@@ -36,38 +36,4 @@ public class OverlappingBruteForce {
         return;
     }
 
-    class Point {
-        int x, y;
-
-        public Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-    class Claim {
-        int id;
-        int x, y, dx, dy;
-
-        public Claim(Matcher matcher) {
-            matcher.find();
-            this.id = Integer.parseInt(matcher.group(1));
-            this.x = Integer.parseInt(matcher.group(2));
-            this.y = Integer.parseInt(matcher.group(3));
-            this.dx = Integer.parseInt(matcher.group(4));
-            this.dy = Integer.parseInt(matcher.group(5));
-        }
-
-        Set<Point> getPoints(){
-            Set<Point> result = new HashSet<>();
-            int x2 = this.x + this.dx;
-            int y2 = this.y + this.dy;
-            for(int i = this.x; i < x2; i++) {
-                for (int j = this.y; j < y2; j++) {
-                    result.add(new Point(i,j));
-                }
-            }
-            return result;
-        }
-    }
 }
