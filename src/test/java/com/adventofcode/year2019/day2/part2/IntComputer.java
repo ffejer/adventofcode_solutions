@@ -1,4 +1,4 @@
-package com.adventofcode.year2019.day2.part1;
+package com.adventofcode.year2019.day2.part2;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,32 +21,36 @@ public class IntComputer {
                 IOException e) {
             e.printStackTrace();
         }
-        List<Integer> intList = convertInput(input);
-        adjustComputer(intList);
+        List<Integer> initialList = convertInput(input);
 
-        System.out.println(doCalc(intList));
+        outer: for(int i = 0; i < 100; i++) {
+            for(int j = 0; j < 100; j++) {
+                List<Integer> intList = new ArrayList<>(initialList);
+                adjustComputer(intList, i, j);
+                Integer integer = doCalc(intList);
+                if(integer == 19690720) {
+                    System.out.println(String.format("result %d %d", i, j));
+                    break outer;
+                }
+            }
+        }
     }
 
     static Integer doCalc(List<Integer> input) {
         int size = input.size();
 
         for(int position = 0; position < size; position += 4) {
-            System.out.println(position);
             int opcode = input.get(position);
-
             if(position == size - 1) {
                 break;
             }
-
             int index1 = input.get(position + 1);
             int index2 = input.get(position + 2);
             int destination = input.get(position + 3);
-            Integer value1 = input.get(index1);
-            Integer value2 = input.get(index2);
             if(opcode == 1) {
-                input.set(destination, value1 + value2);
+                input.set(destination, input.get(index1) + input.get(index2));
             } else if (opcode == 2) {
-                input.set(destination, value1 * value2);
+                input.set(destination, input.get(index1) * input.get(index2));
             } else if (opcode == 99) {
                 break;
             } else{
@@ -57,9 +61,9 @@ public class IntComputer {
         return input.get(0);
     }
 
-    private static void adjustComputer(List<Integer> intList) {
-        intList.set(1, 12);
-        intList.set(2, 2);
+    private static void adjustComputer(List<Integer> intList, int i, int j) {
+        intList.set(1, i);
+        intList.set(2, j);
     }
 
     private static List<Integer> convertInput(List<String> input) {
