@@ -1,12 +1,9 @@
 package com.adventofcode.util;
 
-import com.adventofcode.year2015.day6.Lights;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.stream.Stream;
 
 public abstract class AbstractProblemSolution {
