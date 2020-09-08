@@ -2,11 +2,27 @@ package com.adventofcode.util;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public abstract class AbstractProblemSolution {
+
+    protected static List<String> getInputLines(String filePath) {
+        List<String> input = Collections.emptyList();
+
+        try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
+            input = stream.collect(Collectors.toList());
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+        return input;
+    }
 
     protected static String readFile(String pathname) {
 
@@ -27,9 +43,9 @@ public abstract class AbstractProblemSolution {
     }
 
     protected static Stream<String> readStreamFromFile(String pathname) {
-        try(Stream<String> stream = Files.lines(Paths.get(pathname))) {
+        try (Stream<String> stream = Files.lines(Paths.get(pathname))) {
             return stream;
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Something went wrong. " + e.getMessage());
         }
         return null;

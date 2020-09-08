@@ -1,5 +1,7 @@
 package com.adventofcode.year2019.day2.part1;
 
+import com.adventofcode.util.AbstractProblemSolution;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,17 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class IntComputer {
+public class IntComputer extends AbstractProblemSolution {
 
     public static void main(String[] args) {
-        List<String> input = Collections.emptyList();
-
-        try (Stream<String> stream = Files.lines(Paths.get("./src/main/resources/2019/day/2/input"))) {
-            input = stream.collect(Collectors.toList());
-        } catch (
-                IOException e) {
-            e.printStackTrace();
-        }
+        List<String> input = getInputLines("./src/main/resources/2019/day/2/input");
         List<Integer> intList = convertInput(input);
         adjustComputer(intList);
 
