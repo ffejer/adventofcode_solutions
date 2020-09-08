@@ -1,4 +1,4 @@
-package com.adventofcode;
+package com.adventofcode.model;
 
 import java.util.Objects;
 

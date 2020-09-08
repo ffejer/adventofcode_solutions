@@ -1,6 +1,6 @@
 package com.adventofcode.year2019.day3.part2;
 
-import com.adventofcode.Pair;
+import com.adventofcode.model.Pair;
 import com.adventofcode.util.AbstractProblemSolution;
 import org.apache.commons.collections4.SetUtils;
 

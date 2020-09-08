@@ -1,14 +1,13 @@
 package com.adventofcode.year2019.day3.part1;
 
-import com.adventofcode.Pair;
+import com.adventofcode.model.Pair;
 import com.adventofcode.util.AbstractProblemSolution;
-import org.apache.commons.collections4.SetUtils;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.collections4.SetUtils;
 
 public class CrossedWires extends AbstractProblemSolution {
     static String pattern = "(R|L|D|U)([0-9]+)[,]?";
