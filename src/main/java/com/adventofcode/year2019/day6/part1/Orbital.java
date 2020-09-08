@@ -18,7 +18,7 @@ public class Orbital extends AbstractProblemSolution {
 
   public static void main(String[] args) {
     System.out.println(new Orbital().solve(getInputLines("./src/main/resources/2019/day/6/input")));
-//    System.out.println(new Orbital().solve(getInputLines("./src/main/resources/2019/day/6/testinput")));
+    System.out.println(new Orbital().solve(getInputLines("./src/main/resources/2019/day/6/testinput")));
   }
 
   private int solve(List<String> inputLines) {
