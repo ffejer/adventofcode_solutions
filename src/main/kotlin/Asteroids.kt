@@ -1,3 +1,5 @@
+package com.adventofcode.util
+
 fun main(args: Array<String>) {
     println("Hello World!")
     val asteroid = Asteroids(3)

@@ -1,6 +1,7 @@
 package com.adventofcode.year2019.day6.part2;
 
 import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.util.Asteroids;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;

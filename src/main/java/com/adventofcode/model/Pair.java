@@ -11,6 +11,10 @@ public class Pair<T, U> {
         this.right = right;
     }
 
+    public static <T,U> Pair<T,U> of(T left, U right) {
+        return new Pair<>(left, right);
+    }
+
     public T getLeft() {
         return left;
     }
