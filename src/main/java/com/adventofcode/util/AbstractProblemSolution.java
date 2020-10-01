@@ -42,14 +42,13 @@ public abstract class AbstractProblemSolution {
         return text;
     }
 
-    protected static Stream<String> readStreamFromFile(String pathname) {
+    protected static List<String> readStreamFromFile(String pathname) {
         try (Stream<String> stream = Files.lines(Paths.get(pathname))) {
-            return stream;
+            return stream.collect(Collectors.toList());
         } catch (Exception e) {
             System.out.println("Something went wrong. " + e.getMessage());
         }
         return null;
     }
-
 
 }
