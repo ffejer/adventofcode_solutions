@@ -1,4 +1,4 @@
-package com.adventofcode.year2022.day4;
+package com.adventofcode.year2022.day4.part1;
 
 import com.adventofcode.util.AbstractProblemSolution;
 import java.text.MessageFormat;
