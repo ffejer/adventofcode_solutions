@@ -12,7 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 public class CalorieCounting {
 
   public static void main(String[] args) throws IOException {
-    try (Stream<String> stream = Files.lines(Paths.get("./src/main/resources/2022/1/input"))) {
+    try (Stream<String> stream = Files.lines(Paths.get("./src/main/resources/input/2022/1/input"))) {
       var listofcalories = stream.collect(Collectors.toList());
       var elfCalories = new ArrayList<Integer>();
       int currentCalories = 0;
