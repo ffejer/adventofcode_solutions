@@ -1,10 +1,10 @@
 package com.adventofcode.year2022.day3.part1;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class RuckSack extends AbstractProblemSolution {
+public class RuckSack {
 
   private static final Logger logger = LoggerFactory.getLogger(RuckSack.class);
   private static final int LOWERCASE_A = 'a';
@@ -17,7 +17,7 @@ public class RuckSack extends AbstractProblemSolution {
   }
 
   private void solve() {
-    var input = getInputLines("./src/main/resources/input/2022/3/input");
+    var input = Util.getInputLines("./src/main/resources/input/2022/3/input");
     int solution = 0;
     for (String line : input) {
       int totalLength = line.length();

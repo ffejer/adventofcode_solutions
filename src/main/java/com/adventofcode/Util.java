@@ -1,4 +1,4 @@
-package com.adventofcode.util;
+package com.adventofcode;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,11 +10,14 @@ import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class AbstractProblemSolution {
+public final class Util {
 
-  private static final Logger logger = LoggerFactory.getLogger(AbstractProblemSolution.class);
+  private static final Logger logger = LoggerFactory.getLogger(Util.class);
 
-  protected List<String> getInputLines(String filePath) {
+  private Util() {
+  }
+
+  public static List<String> getInputLines(String filePath) {
     try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
       return stream.toList();
     } catch (
@@ -24,7 +27,7 @@ public abstract class AbstractProblemSolution {
     return List.of();
   }
 
-  protected String readFile(String pathname) {
+  public static String readFile(String pathname) {
 
     String text = "";
 

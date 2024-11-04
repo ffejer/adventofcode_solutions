@@ -4,7 +4,7 @@ import static com.adventofcode.year2015.day6.Lights.Change.OFF;
 import static com.adventofcode.year2015.day6.Lights.Change.ON;
 import static com.adventofcode.year2015.day6.Lights.Change.TOGGLE;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Lights extends AbstractProblemSolution {
+public class Lights {
 
   static String pattern = "^(turn on|turn off|toggle)\\s([0-9]*\\d),([0-9]*\\d)\\sthrough\\s([0-9]*\\d),([0-9]*\\d)";
   static Pattern instruction = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.UNIX_LINES);
@@ -57,7 +57,7 @@ public class Lights extends AbstractProblemSolution {
   void solve() {
     Lights lights = new Lights();
     List<SwitchChange> input = lights.convertInput(
-        readFile("./src/main/resources/2015/day6/part1/input"));
+        Util.readFile("./src/main/resources/2015/day6/part1/input"));
 
     for (SwitchChange instruction : input) {
       applyInstruction(instruction);

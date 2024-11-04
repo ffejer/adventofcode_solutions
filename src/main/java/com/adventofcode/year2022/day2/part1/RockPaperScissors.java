@@ -1,10 +1,10 @@
 package com.adventofcode.year2022.day2.part1;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class RockPaperScissors extends AbstractProblemSolution {
+public class RockPaperScissors {
 
   private static final Logger logger = LoggerFactory.getLogger(RockPaperScissors.class);
 
@@ -23,7 +23,7 @@ public class RockPaperScissors extends AbstractProblemSolution {
 
 
   private void solve() {
-    var input = getInputLines("./src/main/resources/input/2022/2/input");
+    var input = Util.getInputLines("./src/main/resources/input/2022/2/input");
     var solution = input.stream().map(s -> {
       String[] choices = s.split(" ");
       var opponent = getStone(choices[0]);

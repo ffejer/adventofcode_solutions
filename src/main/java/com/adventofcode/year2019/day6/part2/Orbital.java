@@ -1,6 +1,6 @@
 package com.adventofcode.year2019.day6.part2;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import org.apache.commons.collections4.ListUtils;
 
-public class Orbital extends AbstractProblemSolution {
+public class Orbital {
 
   Map<String, Orbit> orbits;
 
@@ -23,7 +23,7 @@ public class Orbital extends AbstractProblemSolution {
   }
 
   private int solve() {
-    processInput(getInputLines("./src/main/resources/2019/day/6/input"));
+    processInput(Util.getInputLines("./src/main/resources/2019/day/6/input"));
     return findShortestWay();
   }
 

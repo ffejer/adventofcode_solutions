@@ -1,11 +1,11 @@
 package com.adventofcode.year2015.day1.part1;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FloorMadness extends AbstractProblemSolution {
+public class FloorMadness {
 
   enum Direction {
     UP, DOWN
@@ -28,7 +28,7 @@ public class FloorMadness extends AbstractProblemSolution {
   }
 
   List<Direction> convertInput() throws IOException {
-    String text = readFile("./src/main/resources/2015/day1/input");
+    String text = Util.readFile("./src/main/resources/2015/day1/input");
 
     List<Direction> input = new ArrayList<>();
 

@@ -1,11 +1,11 @@
 package com.adventofcode.year2022.day4.part1;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import java.text.MessageFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CampCleanup extends AbstractProblemSolution {
+public class CampCleanup {
 
   private static final Logger logger = LoggerFactory.getLogger(CampCleanup.class);
 
@@ -14,7 +14,7 @@ public class CampCleanup extends AbstractProblemSolution {
   }
 
   private void solve() {
-    var input = getInputLines("./src/main/resources/input/2022/4/input");
+    var input = Util.getInputLines("./src/main/resources/input/2022/4/input");
     int solution = 0;
     for (String line : input) {
       String[] assignments = line.split(",");

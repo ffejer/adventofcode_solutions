@@ -1,12 +1,12 @@
 package com.adventofcode.year2019.day6.part1;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class Orbital extends AbstractProblemSolution {
+public class Orbital {
 
   Map<String, Orbit> orbits;
 
@@ -21,7 +21,7 @@ public class Orbital extends AbstractProblemSolution {
   }
 
   private int solve() {
-    processInput(getInputLines("./src/main/resources/2019/day/6/input"));
+    processInput(Util.getInputLines("./src/main/resources/2019/day/6/input"));
     return countOrbits(orbits.get("COM"),
         -1); // as COM doesn't orbit we need to start at 0 in the function
   }

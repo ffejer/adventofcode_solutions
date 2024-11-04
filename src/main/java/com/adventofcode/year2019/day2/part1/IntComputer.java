@@ -1,19 +1,19 @@
 package com.adventofcode.year2019.day2.part1;
 
-import com.adventofcode.util.AbstractProblemSolution;
+import com.adventofcode.Util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class IntComputer extends AbstractProblemSolution {
+public class IntComputer {
 
   public static void main(String[] args) {
     new IntComputer().solveProblem();
   }
 
   void solveProblem() {
-    List<String> input = getInputLines("./src/main/resources/2019/day/2/input");
+    List<String> input = Util.getInputLines("./src/main/resources/2019/day/2/input");
     List<Integer> intList = convertInput(input);
     adjustComputer(intList);
 
