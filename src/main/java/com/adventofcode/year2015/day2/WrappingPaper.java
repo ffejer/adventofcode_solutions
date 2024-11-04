@@ -64,7 +64,7 @@ public class WrappingPaper {
 
     List<Present> convertInput() {
 
-        String fileName = "./src/main/resources/2015/day2/part1/input.txt";
+        String fileName = "./src/main/resources/2015/day2/part1/input";
 
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 

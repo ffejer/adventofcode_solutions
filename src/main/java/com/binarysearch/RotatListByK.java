@@ -14,6 +14,12 @@ package com.binarysearch;
  */
 public class RotatListByK {
   public int[] solve(int[] nums, int k) {
+    int length = nums.length;
+
+    for (int i = 1; i == length; i++) {
+
+    }
+
     return new int[0];
   }
 }

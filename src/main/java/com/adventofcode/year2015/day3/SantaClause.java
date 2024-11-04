@@ -67,7 +67,7 @@ public class SantaClause {
     }
 
     static List<Direction> convertInput() throws IOException {
-        Path path = Paths.get("./input.txt");
+        Path path = Paths.get("input");
         byte[] data = Files.readAllBytes(path);
         String text = new String(data, "UTF-8");
 

@@ -51,7 +51,7 @@ public class Lights extends AbstractProblemSolution {
 
     public static void main(String[] args) {
         Lights lights = new Lights();
-        List<SwitchChange> input = lights.convertInput(readFile("./src/main/resources/2015/day6/part1/input.txt"));
+        List<SwitchChange> input = lights.convertInput(readFile("./src/main/resources/2015/day6/part1/input"));
         lights.solve(input);
 
         System.out.println(lights.getSolution());

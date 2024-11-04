@@ -44,7 +44,7 @@ public class FloorMadness {
     }
 
     static List<Direction> convertInput() throws IOException {
-//        Path path = Paths.get("./src/main/resources/2015/day1/input.txt");
+//        Path path = Paths.get("./src/main/resources/2015/day1/input");
 //        byte[] data = Files.readAllBytes(path);
 //        String text = new String(data, "UTF-8");
 

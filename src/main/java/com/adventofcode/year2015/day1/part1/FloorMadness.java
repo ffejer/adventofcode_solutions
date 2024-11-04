@@ -32,7 +32,7 @@ public class FloorMadness extends AbstractProblemSolution {
     }
 
     static List<Direction> convertInput() throws IOException {
-        String text = readFile("./src/main/resources/2015/day1/input.txt");
+        String text = readFile("./src/main/resources/2015/day1/input");
 
         List<Direction> input = new ArrayList<>();
 

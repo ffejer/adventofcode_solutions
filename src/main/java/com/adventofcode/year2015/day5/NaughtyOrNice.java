@@ -47,7 +47,7 @@ public class NaughtyOrNice {
 
         List<String> lines = new ArrayList<>();
 
-        String fileName = "./src/main/resources/2015/day5/part1/input.txt";
+        String fileName = "./src/main/resources/2015/day5/part1/input";
 
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             lines = stream.collect(Collectors.toList());
