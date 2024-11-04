@@ -1,4 +1,4 @@
-package com.adventofcode.year2022.day6;
+package com.adventofcode.year2022.day6.part1;
 
 import com.adventofcode.Util;
 import java.util.stream.Collectors;
