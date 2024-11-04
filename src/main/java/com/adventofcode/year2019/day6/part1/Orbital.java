@@ -21,7 +21,7 @@ public class Orbital extends AbstractProblemSolution {
   }
 
   private int solve() {
-    processInput(getInputLines("./src/main/resources/2019/day/6/input").toList());
+    processInput(getInputLines("./src/main/resources/2019/day/6/input"));
     return countOrbits(orbits.get("COM"),
         -1); // as COM doesn't orbit we need to start at 0 in the function
   }

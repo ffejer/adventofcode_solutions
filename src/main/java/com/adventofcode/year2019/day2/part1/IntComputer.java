@@ -13,7 +13,7 @@ public class IntComputer extends AbstractProblemSolution {
   }
 
   void solveProblem() {
-    List<String> input = getInputLines("./src/main/resources/2019/day/2/input").toList();
+    List<String> input = getInputLines("./src/main/resources/2019/day/2/input");
     List<Integer> intList = convertInput(input);
     adjustComputer(intList);
 

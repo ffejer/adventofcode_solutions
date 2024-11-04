@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,14 +14,14 @@ public abstract class AbstractProblemSolution {
 
   private static final Logger logger = LoggerFactory.getLogger(AbstractProblemSolution.class);
 
-  protected Stream<String> getInputLines(String filePath) {
+  protected List<String> getInputLines(String filePath) {
     try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
-      return stream;
+      return stream.toList();
     } catch (
         IOException e) {
       logger.error("Error while reading file {}", filePath, e);
     }
-    return Stream.empty();
+    return List.of();
   }
 
   protected String readFile(String pathname) {
@@ -37,19 +36,9 @@ public abstract class AbstractProblemSolution {
       System.out.println(fis.read(data));
       text = new String(data, "UTF-8");
     } catch (Exception e) {
-      e.printStackTrace();
+      logger.error("Error while reading file {}", pathname, e);
     }
 
     return text;
   }
-
-  protected List<String> readStreamFromFile(String pathname) {
-    try (Stream<String> stream = Files.lines(Paths.get(pathname))) {
-      return stream.collect(Collectors.toList());
-    } catch (Exception e) {
-      System.out.println("Something went wrong. " + e.getMessage());
-    }
-    return null;
-  }
-
 }

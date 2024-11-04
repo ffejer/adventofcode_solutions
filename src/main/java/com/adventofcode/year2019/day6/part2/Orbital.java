@@ -23,7 +23,7 @@ public class Orbital extends AbstractProblemSolution {
   }
 
   private int solve() {
-    processInput(getInputLines("./src/main/resources/2019/day/6/input").toList());
+    processInput(getInputLines("./src/main/resources/2019/day/6/input"));
     return findShortestWay();
   }
 
