@@ -61,7 +61,7 @@ public class RuckSack extends AbstractProblemSolution {
       return result.iterator().next();
     } else {
       throw new IllegalStateException(
-          "Couldn't find common character in the tripple: " + batch);
+          "Couldn't find common character in the triplet: " + batch);
     }
   }
 }
