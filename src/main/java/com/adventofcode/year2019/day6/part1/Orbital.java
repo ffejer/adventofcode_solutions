@@ -17,12 +17,11 @@ public class Orbital extends AbstractProblemSolution {
   }
 
   public static void main(String[] args) {
-    System.out.println(new Orbital().solve(getInputLines("./src/main/resources/2019/day/6/input")));
-    System.out.println(new Orbital().solve(getInputLines("./src/main/resources/2019/day/6/testinput")));
+    new Orbital().solve();
   }
 
-  private int solve(List<String> inputLines) {
-    processInput(inputLines);
+  private int solve() {
+    processInput(getInputLines("./src/main/resources/2019/day/6/input").toList());
     return countOrbits(orbits.get("COM"),
         -1); // as COM doesn't orbit we need to start at 0 in the function
   }
